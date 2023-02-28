@@ -1,0 +1,21 @@
+/* .main{
+    height: 100vh;
+    width: 98.5vw;
+    display: flex;
+    text-align: center;
+   
+} */
+
+.right{
+    width:98.5vw;
+    
+    padding: 50px;
+    text-align: center;
+    background-color: aliceblue;
+
+}
+
+.btn{
+    background-color:#ea4c89;
+    margin-top: 20px;
+}
