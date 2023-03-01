@@ -23,7 +23,8 @@ function App() {
     <Route path="/slots" element={<Slots/>} />
     <Route path="/home" element={<Home/>} />
     <Route path="/add" element={<AddExpert/>} />
-    <Route path="/expert/:id" element={<Profile/>} />
+    
+    <Route path="/expert/:expertId" element={<Profile/>} />
     <Route path="/editexpert/:id" element={<AdminEdit/>} />
     </Routes>
     </BrowserRouter> 
