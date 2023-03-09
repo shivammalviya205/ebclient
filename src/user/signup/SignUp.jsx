@@ -49,7 +49,7 @@ const SignUp = () => {
       });
       const data=await response.json()
       console.log(response.data);
-      if(response.data){
+      if(data){
        // M.toast({ html:'account success', classes: "#43a047 green darken-1" })
         navigate('/signin');
       }

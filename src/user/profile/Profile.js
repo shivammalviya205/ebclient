@@ -81,9 +81,10 @@ const Profile = () => {
      }
       
      const getexpertslot=async()=>{
-        const response=await fetch(`http://localhost:3002/admin/${id}/getslotsdata`,{});
+        const response=await fetch(`http://localhost:3002/admin/${expertId}/getslotsdata`,{});
         const data=await response.json();
         setslotinfo(data);
+        console.log(data);
        
      }
     

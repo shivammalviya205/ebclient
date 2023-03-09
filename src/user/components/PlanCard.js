@@ -22,18 +22,18 @@ function PlanCard({setplan}) {
     </Card>
 
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top"  style={{width:287,height:180}} src={gold} />
+      <Card.Img variant="top"  style={{width:287,height:180,objectFit:'contain'}} src={gold} />
       <Card.Body>
         <Card.Title>GOLD plan </Card.Title>
         <Card.Title>{8-user.goldslots} slots remaining</Card.Title>
         <Button variant="primary" onClick={()=>setplan('Gold')} disabled={user.goldslots>=8}>Book an GOLD slot</Button>
       </Card.Body>
     </Card>
-
+       
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top"  style={{width:287,height:180,objectFit:'contain'}} src={plt} />
       <Card.Body>
-        <Card.Title>GOLD plan </Card.Title>
+        <Card.Title>Platinum plan </Card.Title>
         <Card.Title>{5-user.platinumslots} slots remaining</Card.Title>
         <Button variant="primary" onClick={()=>setplan('Platinum')} disabled={user.platinumslots>=5}>Book an Platinum slot</Button>
       </Card.Body>
