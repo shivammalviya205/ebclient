@@ -51,7 +51,9 @@ const SignIn = () => {
        localStorage.setItem('user',JSON.stringify(data.user));
        localStorage.setItem('token',JSON.stringify(data.token));
      if(data.token){
-    navigate('/home')}
+      if(data.user.paymentStatus==='Done'){navigate('/home')}
+      else navigate('/payment')
+  }
     else{
       alert(data.msg)
     }
