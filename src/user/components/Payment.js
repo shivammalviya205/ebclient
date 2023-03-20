@@ -3,6 +3,7 @@ import { Box,Stack } from '@mui/system';
 //import Card from './Card';
 import axios from 'axios';
 import { Button } from 'antd';
+import PricingPlan from './PricingPlan';
 
 const Payment = () => {
  
@@ -45,20 +46,20 @@ const Payment = () => {
   };
 
   return (
-    <Box>
-       
-      <Stack
-        height={'100vh'}
-        alignItems='center'
-        justifyContent='center'
-        direction={['column', 'row']}
-      >  
-         <div>Get subscription first</div>
-        <Button onClick={()=>checkoutHandler(5000)}>Buy30 days for Rs 5000</Button>
-        <Button onClick={()=>checkoutHandler(10000)}>Buy60 days for Rs 10000</Button>
-      </Stack>
-    </Box>
+    <div style={{display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column',marginTop:'100px'}}>
+        
+         <h1>Choose Your subscription </h1> 
+          
+        <PricingPlan checkoutHandler={checkoutHandler}/> 
+
+
+
+    </div>
   );
 };
 
 export default Payment;
+
+
+{/* <Button onClick={()=>checkoutHandler(5000)} style={{marginRight:'20px'}}>Buy30 days for Rs 5000</Button>
+        <Button onClick={()=>checkoutHandler(10000)} >Buy60 days for Rs 10000</Button> */}

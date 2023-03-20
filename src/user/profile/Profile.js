@@ -26,15 +26,15 @@ const Profile = () => {
 
     const token=JSON.parse(localStorage.getItem('token'));
     const user=JSON.parse(localStorage.getItem('user'));
-    const givenDate = moment('03-01-2023'); // Example given date
+    //const givenDate = moment('03-01-2023'); // Example given date
     console.log(user);
-    const {userName}=user;
+    const {userName,validity}=user;
     console.log(userName)
     const {expertId}=useParams();
     const id=user._id;
      console.log(Date)
 
-
+     
 
         const handleslots=async()=>{
             const response = await fetch(`http://localhost:3002/user/${id}/updateslot`,{
@@ -75,9 +75,7 @@ const Profile = () => {
             handleslots();
             alert('Booked')
             navigate('/home')
-        }
-
-         
+        }   
      }
       
      const getexpertslot=async()=>{
@@ -108,10 +106,31 @@ const Profile = () => {
       
     
 
+const paymentDateStr = user.paymentdate;
+  console.log(paymentDateStr)
+
+  // Convert paymentDateStr to a moment object
+  const paymentDate = moment(paymentDateStr, 'ddd MMM DD YYYY HH:mm:ss [GMT]ZZ');
+   // Add 30 days to the given date
+  const newDate = paymentDate.clone().add(validity, 'days');
+
+
+
+  // Define the disabledDate function
   const disabledDate = (current) => {
-    // Disable dates before the given date and after 30 days from the given date
-    return current && (current < moment().startOf('day') || current > moment().add(30, 'days').startOf('day'));
+    // Disable dates before today
+    if (current && current < moment().endOf('day')) {
+      return true;
+    }
+    // Disable dates after the given date
+    if (current && current > newDate.endOf('day')) {
+      return true;
+    }
+    return false;
   };
+
+
+
 
 
      const getdata=async()=>{
@@ -154,7 +173,7 @@ const Profile = () => {
         <Dropdown slotno={slotno} setslotno={setslotno} bookedslot={bookedslot} />
     </div>
     <Button variant='contained' onClick={()=>bookAppointment()} style={{marginTop:'10px'}}>Book Slot</Button>
-   
+     
     </div>
 }
   </> 

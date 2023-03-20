@@ -15,7 +15,7 @@ function PlanCard({setplan}) {
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top"  style={{width:287,height:180}} src={silver} />
       <Card.Body>
-        <Card.Title>Silver plan {user.userName} </Card.Title>
+        <Card.Title>Silver plan  </Card.Title>
         <Card.Title>{10-user.silverslots} slots remaining</Card.Title>
         <Button variant="primary"onClick={()=>setplan('Silver')} disabled={user.silverslots>=10}>Book an Silver slot</Button>
       </Card.Body>

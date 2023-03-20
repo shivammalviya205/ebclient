@@ -1,0 +1,32 @@
+.container {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+  
+  .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-header {
+    background-color: #e0e0e0;
+    text-align: center;
+  }
+  
+  .price {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 5rem;
+  }
+  
+  .button {
+    margin-top: auto;
+    background-color: #3f51b5;
+    color: white;
+  }
+  
+  .button:hover {
+    background-color: #303f9f;
+  }
+  
