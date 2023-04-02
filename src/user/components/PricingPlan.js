@@ -7,28 +7,22 @@ const pricingData = [
     title: 'Monthly Plan',
     price: 400,
     features: [
-      '5 silver slots',
-      '3 silver slots',
-      '2 platinum slots',
+      '5 slots will be allocated ',
     ],
   },
   {
     title: '3 Month Plan',
     price: 1000,
     features: [
-        '15 silver slots',
-        '9 silver slots',
-        '6 platinum slots',
+      '15 slots will be allocated'
      
     ],
   },
   {
     title: '6 Month Plan',
-    price: 2400,
+    price: 2000,
     features: [
-        '30 silver slots',
-        '18 silver slots',
-        '12 platinum slots',
+      '30 slots will be allocated'
       
     ],
   },
@@ -36,9 +30,7 @@ const pricingData = [
     title: 'Yearly Plan',
     price: 4000,
     features: [
-        '60 silver slots',
-        '36 silver slots',
-        '24 platinum slots',
+      '60 slots will be allocated'
      
     ],
   },
@@ -46,7 +38,7 @@ const pricingData = [
 
 function PricingPlan({checkoutHandler}) {
   return (
-    <Container maxWidth="md" className="container">
+    <Container maxWidth="md" className="container" sx={{marginTop:'100px'}}>
       <Grid container spacing={4}>
         {pricingData.map((plan) => (
           <Grid item key={plan.title} xs={12} md={3}>

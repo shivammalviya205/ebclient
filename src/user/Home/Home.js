@@ -1,6 +1,7 @@
 import { textAlign } from '@mui/system';
 import React, { useEffect, useState } from 'react'
 import SingleCard from '../components/Card'
+import Navbar from '../components/Navbar';
 import './Home.scss'
 
 
@@ -37,8 +38,8 @@ const Home = () => {
     if(info.length===0) return;
 
   return (
-    <>
-    <div style={{textAlign:'center',marginTop:'40px'}}><h1>Get Expertise from world's best experts of their respective domain</h1> </div>
+    <>  
+    <Navbar/>
     <div className='Homediv'>
         { info.map((e)=>{ return (<SingleCard info={e} />); })}
     </div>

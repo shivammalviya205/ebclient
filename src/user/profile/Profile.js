@@ -4,6 +4,7 @@ import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import Dropdown from '../components/Dropdown';
+import Navbar from '../components/Navbar';
 import PlanCard from '../components/PlanCard';
 import './Profile.scss'
 
@@ -12,7 +13,7 @@ const Profile = () => {
     const navigate=useNavigate();
     //for select plan
 
-    const[plan,setplan]=useState('');
+     const[plan,setplan]=useState('Gold');
        const [slotinfo,setslotinfo]=useState([]);
       const [Date,setDate]=useState('');
       const [slotno,setslotno]=useState();
@@ -161,7 +162,8 @@ const paymentDateStr = user.paymentdate;
     
   return (
      <> 
-     {plan===''?<PlanCard setplan={setplan}/>:
+     <Navbar/>
+     
     <div className='profile-div'>
         <h4 style={{marginBottom:'40px'}}>Book your Slot with {expertName}<br/> for Guidance in {domain}<br/> in Only Rs. {fees}</h4>
         <div className='date'>
@@ -175,7 +177,7 @@ const paymentDateStr = user.paymentdate;
     <Button variant='contained' onClick={()=>bookAppointment()} style={{marginTop:'10px'}}>Book Slot</Button>
      
     </div>
-}
+
   </> 
   )
 }

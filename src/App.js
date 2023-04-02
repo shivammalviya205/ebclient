@@ -11,9 +11,11 @@ import Home from "./user/Home/Home";
 import Profile from "./user/profile/Profile";
 import SignIn from "./user/signin/SignIn";
 import SignUp from "./user/signup/SignUp";
+import Membership from "./user/member/Membership";
 
 
 function App() {
+  
   return (
     <>
     <BrowserRouter>
@@ -27,7 +29,7 @@ function App() {
     <Route path="/add" element={<AddExpert/>} />
     <Route path="/paymentsuccess" element={<PaymentSuccess />} />
     <Route path="/payment" element={<Payment/>} />
-
+    <Route path="/membership" element={<Membership/>}/>
     <Route path="/expert/:expertId" element={<Profile/>} />
     <Route path="/editexpert/:id" element={<AdminEdit/>} />
     </Routes>
