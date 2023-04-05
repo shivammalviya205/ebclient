@@ -6,6 +6,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Link, useNavigate } from 'react-router-dom';
 import Slots from '../slots/Slots';
+import Navbar from '../Navbar';
 function AdminHome() {
       const navigate=useNavigate()
     const [info, setinfo] = useState([])
@@ -72,7 +73,8 @@ function AdminHome() {
     console.log(info)
     if(info.length===0) return;
     return (
-        <>
+        <> 
+        <Navbar/>
         <div className='container pt-5 mt-5'>
 
 

@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import moment from 'moment';
 import {TimePicker} from 'antd';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
+import Navbar from './Navbar';
 
 const AddExpert = () => {
   const [name, setName] = useState('');
@@ -86,6 +87,8 @@ const AddExpert = () => {
   };
 
   return ( 
+    <>
+    <Navbar/>
     <div className="main">
       <div className="right">
         <h1>Add expert</h1>
@@ -129,7 +132,7 @@ const AddExpert = () => {
     </form>
       </div>
     </div>
-    
+    </>
   );
 };
 

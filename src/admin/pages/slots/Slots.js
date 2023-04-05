@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom';
 import FilterComponent from './Filter';
+import Navbar from '../Navbar';
 
 const Slots = () => {
   const [info,setinfo]=useState([]);
@@ -42,6 +43,7 @@ const Slots = () => {
    if(info.length===0) return;
   return ( 
     <>
+    <Navbar/>
     <FilterComponent expertlist={expertlist} filterterm={filterterm} setfilterterm={setfilterterm}/>
     <div className='container pt-3 mt-3'>
             <h1 style={{ textAlign: 'center' }}>Booked Slots </h1>
