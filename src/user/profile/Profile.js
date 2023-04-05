@@ -54,7 +54,16 @@ const Profile = () => {
                 localStorage.setItem('user',JSON.stringify(data));
               }
         }
-
+          
+        const getuserdata=async()=>{
+         
+            const res=await fetch(`http://localhost:3002/user/${id}/getuserdata`,{});
+             const data=await res.json()
+             if(data){
+              console.log(data);
+              localStorage.setItem('user',JSON.stringify(data));
+            }
+        }
     
       const bookAppointment = async() => {
         // await newComment(comment);
@@ -74,7 +83,8 @@ const Profile = () => {
        const data=await response.json();
         if(data){ 
             handleslots();
-            alert('Booked')
+            alert('Booked') 
+            await getuserdata();
             navigate('/home')
         }   
      }
@@ -165,10 +175,10 @@ const paymentDateStr = user.paymentdate;
      <Navbar/>
      
     <div className='profile-div'>
-        <h4 style={{marginBottom:'40px'}}>Book your Slot with {expertName}<br/> for Guidance in {domain}<br/> in Only Rs. {fees}</h4>
+        <h4 style={{marginBottom:'40px'}}>Book your Slot with {expertName}<br/> for Guidance in {domain}</h4>
         <div className='date'>
      <div className='label'><h5>Choose Date</h5></div>
-     <DatePicker format='DD-MM-YYYY' onChange={handledate} disabledDate={disabledDate}/>
+     <DatePicker format='DD-MM-YYYY' onChange={handledate} disabledDate={disabledDate} sx={{marginTop:'100px'}}/>
     </div>
     <div className='date'>
         <div className='label'><h5>Choose Your Slot</h5></div>

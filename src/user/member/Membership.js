@@ -26,7 +26,7 @@ const Membership = () => {
       key,
       amount: order.amount,
       currency: 'INR',
-      name: 'Shivam Malviya',
+      name: 'Praedico Global',
       description: 'Expert booking sysytem',
       image: 'https://avatars.githubusercontent.com/u/25058652?v=4',
       order_id: order.id,
